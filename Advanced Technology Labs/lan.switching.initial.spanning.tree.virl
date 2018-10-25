@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<topology xmlns="http://www.cisco.com/VIRL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.95" simulationEngine="OPENSTACK" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.95/virl.xsd">
+    <node name="SW1" type="SIMPLE" subtype="IOSvL2" location="346,347">
+        <extensions>
+            <entry key="config" type="String">!&#xD;
+version 15.2&#xD;
+!&#xD;
+no service timestamps debug uptime&#xD;
+no service timestamps log uptime&#xD;
+no service password-encryption&#xD;
+!&#xD;
+hostname SW1&#xD;
+!&#xD;
+vtp domain CCIE&#xD;
+vtp mode transparent&#xD;
+vlan 2,5,7,8,9,10,22,43,58,67,79,146&#xD;
+!&#xD;
+no ip domain-lookup&#xD;
+spanning-tree mode pvst&#xD;
+spanning-tree extend system-id&#xD;
+spanning-tree vlan 1-4094 priority 4096&#xD;
+!&#xD;
+!&#xD;
+interface range GigabitEthernet0/1-2&#xD;
+ switchport trunk encapsulation dot1q&#xD;
+ switchport mode trunk&#xD;
+!&#xD;
+interface range GigabitEthernet0/3,GigabitEthernet1/0&#xD;
+ shutdown&#xD;
+!&#xD;
+interface range GigabitEthernet1/1-2&#xD;
+ switchport trunk encapsulation dot1q&#xD;
+ switchport mode trunk&#xD;
+!&#xD;
+!&#xD;
+line con 0&#xD;
+ exec-timeout 0 0&#xD;
+ logging synchronous&#xD;
+line vty 0 4&#xD;
+ no login&#xD;
+line vty 5 15&#xD;
+ no login&#xD;
+!&#xD;
+end&#xD;
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet1/0"/>
+        <interface id="4" name="GigabitEthernet1/1"/>
+        <interface id="5" name="GigabitEthernet1/2"/>
+        <interface id="6" name="GigabitEthernet1/3"/>
+    </node>
+    <node name="SW2" type="SIMPLE" subtype="IOSvL2" location="580,343">
+        <extensions>
+            <entry key="config" type="String">!&#xD;
+version 15.2&#xD;
+!&#xD;
+enable&#xD;
+configure terminal&#xD;
+no service timestamps debug uptime&#xD;
+no service timestamps log uptime&#xD;
+no service password-encryption&#xD;
+!&#xD;
+hostname SW2&#xD;
+!&#xD;
+vtp domain CCIE&#xD;
+vtp mode transparent&#xD;
+vlan 2,5,7,8,9,10,22,43,58,67,79,146&#xD;
+!&#xD;
+no ip domain-lookup&#xD;
+spanning-tree mode pvst&#xD;
+spanning-tree extend system-id&#xD;
+spanning-tree vlan 1-4094 priority 16384&#xD;
+!&#xD;
+!&#xD;
+interface range GigabitEthernet0/1-2&#xD;
+ switchport trunk encapsulation dot1q&#xD;
+ switchport mode trunk&#xD;
+!&#xD;
+interface range GigabitEthernet0/3,GigabitEthernet1/0&#xD;
+ shutdown&#xD;
+!&#xD;
+interface range GigabitEthernet1/1-2&#xD;
+ switchport trunk encapsulation dot1q&#xD;
+ switchport mode trunk&#xD;
+!&#xD;
+!&#xD;
+line con 0&#xD;
+ exec-timeout 0 0&#xD;
+ logging synchronous&#xD;
+line vty 0 4&#xD;
+ no login&#xD;
+line vty 5 15&#xD;
+ no login&#xD;
+!&#xD;
+end&#xD;
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet1/0"/>
+        <interface id="4" name="GigabitEthernet1/1"/>
+        <interface id="5" name="GigabitEthernet1/2"/>
+    </node>
+    <node name="SW3" type="SIMPLE" subtype="IOSvL2" location="339,520">
+        <extensions>
+            <entry key="config" type="String">!&#xD;
+version 15.2&#xD;
+!&#xD;
+enable&#xD;
+configure terminal&#xD;
+no service timestamps debug uptime&#xD;
+no service timestamps log uptime&#xD;
+no service password-encryption&#xD;
+!&#xD;
+hostname SW3&#xD;
+!&#xD;
+vtp domain CCIE&#xD;
+vtp mode transparent&#xD;
+vlan 2,5,7,8,9,10,22,43,58,67,79,146&#xD;
+!&#xD;
+no ip domain-lookup&#xD;
+spanning-tree mode pvst&#xD;
+spanning-tree extend system-id&#xD;
+!&#xD;
+!&#xD;
+interface range GigabitEthernet0/1-2&#xD;
+ switchport trunk encapsulation dot1q&#xD;
+ switchport mode trunk&#xD;
+!&#xD;
+interface range GigabitEthernet0/3,GigabitEthernet1/0&#xD;
+ shutdown&#xD;
+!&#xD;
+interface range GigabitEthernet1/1-2&#xD;
+ switchport trunk encapsulation dot1q&#xD;
+ switchport mode trunk&#xD;
+!&#xD;
+!&#xD;
+line con 0&#xD;
+ exec-timeout 0 0&#xD;
+ logging synchronous&#xD;
+line vty 0 4&#xD;
+ no login&#xD;
+line vty 5 15&#xD;
+ no login&#xD;
+!&#xD;
+end&#xD;
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet1/0"/>
+        <interface id="4" name="GigabitEthernet1/1"/>
+        <interface id="5" name="GigabitEthernet1/2"/>
+    </node>
+    <node name="SW4" type="SIMPLE" subtype="IOSvL2" location="580,519">
+        <extensions>
+            <entry key="config" type="String">!&#xD;
+version 15.2&#xD;
+!&#xD;
+enable&#xD;
+configure terminal&#xD;
+no service timestamps debug uptime&#xD;
+no service timestamps log uptime&#xD;
+no service password-encryption&#xD;
+!&#xD;
+hostname SW4&#xD;
+!&#xD;
+vtp domain CCIE&#xD;
+vtp mode transparent&#xD;
+vlan 2,5,7,8,9,10,22,43,58,67,79,146&#xD;
+!&#xD;
+no ip domain-lookup&#xD;
+spanning-tree mode pvst&#xD;
+spanning-tree extend system-id&#xD;
+spanning-tree vlan 1-4094 priority 8192&#xD;
+!&#xD;
+!&#xD;
+interface range GigabitEthernet0/1-2&#xD;
+ switchport trunk encapsulation dot1q&#xD;
+ switchport mode trunk&#xD;
+!&#xD;
+interface range GigabitEthernet0/3,GigabitEthernet1/0&#xD;
+ shutdown&#xD;
+!&#xD;
+interface range GigabitEthernet1/1-2&#xD;
+ switchport trunk encapsulation dot1q&#xD;
+ switchport mode trunk&#xD;
+!&#xD;
+!&#xD;
+line con 0&#xD;
+ exec-timeout 0 0&#xD;
+ logging synchronous&#xD;
+line vty 0 4&#xD;
+ no login&#xD;
+line vty 5 15&#xD;
+ no login&#xD;
+!&#xD;
+end&#xD;
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet1/0"/>
+        <interface id="4" name="GigabitEthernet1/1"/>
+        <interface id="5" name="GigabitEthernet1/2"/>
+    </node>
+    <annotations/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[2]" src="/virl:topology/virl:node[1]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[1]" src="/virl:topology/virl:node[2]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[2]" src="/virl:topology/virl:node[2]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[3]" src="/virl:topology/virl:node[1]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[4]" src="/virl:topology/virl:node[1]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[3]" src="/virl:topology/virl:node[3]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[4]" src="/virl:topology/virl:node[3]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[5]" src="/virl:topology/virl:node[1]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[6]" src="/virl:topology/virl:node[1]/virl:interface[6]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[5]" src="/virl:topology/virl:node[3]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[6]" src="/virl:topology/virl:node[3]/virl:interface[6]"/>
+</topology>
